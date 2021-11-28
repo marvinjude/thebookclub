@@ -1,0 +1,33 @@
+@import "breakpoints";
+
+.hidden {
+  display: none !important;
+}
+
+div.block {
+  display: block;
+}
+
+@include breakpoint(sm) {
+  .sm-show {
+    display: block !important;
+  }
+  .sm-flex {
+    display: flex !important;
+  }
+  .sm-hidden {
+    display: none !important;
+  }
+}
+
+@include breakpoint(md) {
+  .md-show {
+    display: block !important;
+  }
+  .md-flex {
+    display: flex !important;
+  }
+  .md-hidden {
+    display: none !important;
+  }
+}

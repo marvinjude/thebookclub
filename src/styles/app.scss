@@ -1,0 +1,142 @@
+@import "reset";
+@import "navbar";
+@import "header";
+@import "search";
+@import "colors";
+@import "buttons";
+@import "breakpoints";
+
+@import url("./_book.scss");
+@import url("./util.scss");
+@import url("./animations.scss");
+@import url("./_book_stat.scss");
+@import url("./_responsive-utils.scss");
+@import url("./_featured-books.scss");
+@import url("../../node_modules/flickity/css/flickity.css");
+
+body {
+  background-color: #fefefe;
+  font-family: "Ubuntu", sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.root-container {
+  height: calc(100% - 6rem);
+  display: flex;
+  overflow: hidden;
+}
+
+.main-area {
+  flex: 1 1 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-top: -100px;
+  padding-top: 100px;
+  padding-bottom: 10rem;
+  .container {
+    padding: 1rem;
+  }
+}
+
+.app-details {
+  display: flex;
+  align-items: center;
+
+  svg {
+    flex-shrink: 0;
+  }
+
+  &__name {
+    line-height: 1.1rem;
+    font-size: 1.15rem;
+    white-space: nowrap;
+  }
+  &__type {
+    font-size: 0.75rem;
+    color: #aaaaaa;
+  }
+  &__right {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+  }
+}
+
+.book-list {
+  padding: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-flow: row;
+  gap: 1rem;
+
+  @include breakpoint(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.grid-lists-container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 1rem;
+}
+
+.list-label {
+  padding: 1rem;
+  text-transform: uppercase;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 1.5rem;
+  margin-top: 1rem;
+  border-bottom: 1px solid #eeeeee;
+  width: 100%;
+  letter-spacing: 0.4ch;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+/*Override Flicity styles*/
+.flickity-button {
+  border-radius: 0 !important;
+  height: 100% !important;
+  background: linear-gradient(
+    180deg,
+    rgba(248, 248, 250, 0.8) 0%,
+    #f8f8fa 51.36%,
+    rgba(248, 248, 250, 0.8) 100%
+  ) !important;
+  width: 38px !important;
+  border-right: 2px solid white !important;
+  border-left: 2px solid white !important;
+  mix-blend-mode: normal !important;
+  opacity: 0.8 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flickity-button.previous {
+  margin-left: -10px;
+}
+.flickity-button.next {
+  margin-right: -10px;
+  svg {
+    transform: rotate(180deg);
+  }
+}
+
+.flickity-page-dots .is-selected {
+  background: $primary !important;
+}
+
+.flickity-page-dots {
+  bottom: 13px !important ;
+  background-color: transparent !important;
+}
+
+.flickity-page-dots .dot {
+  width: 9px !important;
+  height: 9px !important;
+}

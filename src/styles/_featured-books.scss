@@ -1,0 +1,97 @@
+@import "colors";
+@import "breakpoints";
+
+$carousel-heigth: 370px;
+
+.main-carousel {
+  outline: none;
+  height: 400;
+}
+
+.carousel-cell {
+  height: 300px;
+  margin-bottom: 50px; /*use remaining carousel height*/
+
+  margin-right: 18px;
+  width: 200px;
+  box-shadow: 0px 30px 30px rgba(34, 34, 34, 0.15);
+
+  @include breakpoint(sm) {
+    width: 220px;
+    height: 320px;
+  }
+
+  /*For desktop devices, Show overlay on hover*/
+  &:hover .carousel-cell__overlay {
+    display: block;
+  }
+
+  .control-button {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      pointer-events: none;
+    }
+  }
+
+  .open-button {
+    background: white;
+  }
+
+  &__inner {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__overlay {
+    display: none;
+    position: relative;
+    z-index: 20;
+    height: 100%;
+    width: 100%;
+    justify-content: flex-end;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.607988) 0%,
+      #000000 79.7%
+    );
+    &__inner {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      color: white;
+      justify-content: flex-end;
+      padding: 1.5rem;
+
+      .status {
+        text-transform: capitalize;
+      }
+
+      .title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-top: 1rem;
+      }
+      .authors {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+      }
+      .mt-1 {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

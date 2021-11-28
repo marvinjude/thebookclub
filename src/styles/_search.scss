@@ -1,0 +1,66 @@
+@import "colors";
+@import "breakpoints";
+
+.search {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  font-size: 0.9rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  &__dropdown-box {
+    z-index: 5;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    position: absolute;
+    top: 40px;
+    z-index: 80;
+    display: none;
+
+    &__item {
+      color: gray;
+      padding: 0.7rem 2rem 0.7rem 2rem;
+      cursor: pointer;
+      text-transform: capitalize;
+      &:hover {
+        background-color: whitesmoke;
+      }
+      strong {
+        color: black;
+      }
+    }
+  }
+
+  &__inner {
+    border: 1px solid #dddddd;
+    display: flex;
+    height: 2.5rem;
+    position: relative;
+    width: 100%;
+
+    @include breakpoint(md) {
+      max-width: 530px;
+    }
+
+    .search__button {
+      background-color: #f9f9fb;
+      width: 2.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-left: 1px solid #dddddd;
+    }
+
+    .search__input {
+      outline: transparent;
+      padding: 0.7rem;
+      height: 100%;
+      flex: 1;
+      &::placeholder {
+        font-weight: 200;
+      }
+    }
+  }
+}

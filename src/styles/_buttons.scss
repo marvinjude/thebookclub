@@ -1,0 +1,30 @@
+@import "colors";
+
+.icon-button {
+  position: relative;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+
+  &__badge {
+    position: absolute;
+    top: 0px;
+    right: -4.5px;
+    width: 20px;
+    border-radius: 50%;
+
+    background-color: $primary;
+    height: 20px;
+    color: $white;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: rgba(220, 220, 220, 0.898);
+  }
+}

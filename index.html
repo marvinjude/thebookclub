@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Icon -->
+    <link rel="shortcut icon" href="" />
+    <link rel="stylesheet" href="./src/styles/app.scss" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <title>BookStore</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <!-- header overlay -->
+      <div class="header__overlay" style="display: none" id="header-overlay">
+        <div class="fade-in header__overlay__inner">
+          <!-- close header overlay -->
+          <button class="icon-button" data-toggle="header-overlay">
+            <svg
+              width="16"
+              height="15"
+              viewBox="0 0 16 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M16 8.28185V6.5338H3.37343L8.67118 1.23606L7.43512 0L0.901316 6.5338L0 7.40783L0.901316 8.28185L7.43512 14.8157L8.67118 13.5796L3.37343 8.28185H16Z"
+                fill="black"
+              />
+            </svg>
+          </button>
+          <!-- search -->
+          <div class="search" id="header-overlay">
+            <div class="search__inner">
+              <input
+                type="search"
+                id="search-input"
+                class="search__input search-input"
+                placeholder="Search books, genres, authors, etc."
+              />
+              <button class="search__button" aria-label="search">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M7.28179 13.7779C8.8124 13.7779 10.2253 13.2598 11.3556 12.4121L14.1578 15.2143L15.5 13.8721L12.6978 11.0699C13.5455 9.93956 14.0636 8.52669 14.0636 6.99608C14.0636 3.25196 11.0259 0.214287 7.28179 0.214287C3.53768 0.214287 0.5 3.25196 0.5 6.99608C0.5 10.7402 3.53768 13.7779 7.28179 13.7779ZM7.28179 2.09812C9.9898 2.09812 12.1797 4.28807 12.1797 6.99608C12.1797 9.70408 9.9898 11.894 7.28179 11.894C4.57378 11.894 2.38383 9.70408 2.38383 6.99608C2.38383 4.28807 4.57378 2.09812 7.28179 2.09812Z"
+                    fill="black"
+                  />
+                </svg>
+              </button>
+              <div class="search__dropdown-box fade-in search-dropdown-box">
+                <!-- Show Items -->
+              </div>
+            </div>
+          </div>
+          <!--  -->
+          <!--  -->
+        </div>
+      </div>
+      <!--  -->
+
+      <button class="icon-button sm-hidden sidebar-toggle">
+        <svg
+          width="16"
+          height="15"
+          viewBox="0 0 16 15"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M0 0H10.2128V1.75432H0V0ZM0 6.62284H16V8.37716H0V6.62284ZM0 13.2457H10.2128V15H0V13.2457Z"
+            fill="black"
+          />
+        </svg>
+      </button>
+
+      <div class="app-details">
+        <svg
+          width="50"
+          height="50"
+          viewBox="0 0 50 50"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M25 50C38.8071 50 50 38.8071 50 25C50 11.1929 38.8071 0 25 0C11.1929 0 0 11.1929 0 25C0 38.8071 11.1929 50 25 50Z"
+            fill="black"
+          />
+          <g clip-path="url(#clip0)">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M22.1382 15C21.4933 15 21.0571 15.5621 21.0571 16.1149V33.8767C21.0571 34.4295 21.4933 35 22.1382 35H25.3815C26.0264 35 26.4625 34.4295 26.4625 33.8767V16.1149C26.4625 15.5621 26.0264 15 25.3815 15H22.1382ZM22.6787 16.6216H24.8409V18.7837H22.6787V16.6216ZM15.0811 17.1621C14.4962 17.1621 14 17.6583 14 18.2432V33.9189C14 34.5038 14.4962 34.9999 15.0811 34.9999H18.3243C18.9092 34.9999 19.4054 34.5038 19.4054 33.9189V18.2432C19.4054 17.6583 18.9092 17.1621 18.3243 17.1621H15.0811ZM15.6216 18.7838H17.7837V20.4054H15.6216V18.7838ZM22.6787 20.4054H24.8409V29.5946H22.6787V20.4054ZM15.6216 22.027H17.7837V30.1351H15.6216V22.027ZM22.6787 31.2162H24.8409V33.3783H22.6787V31.2162ZM15.6216 31.7567H17.7837V33.3783H15.6216V31.7567ZM31.1523 31.698L33.2849 31.3414L33.5523 32.9409L31.4197 33.2974L31.1523 31.698ZM31.9478 23.3444L33.0174 29.742L30.8848 30.0986L29.8152 23.7009L31.9478 23.3444ZM29.2805 20.5021L31.4131 20.1455L31.6805 21.7449L29.5479 22.1015L29.2805 20.5021ZM28.4798 18.9918C27.9325 19.0833 27.4876 19.6129 27.5876 20.2114L29.9122 34.1147C30.0122 34.7132 30.6067 35.0775 31.1539 34.986L34.3528 34.4512C34.9001 34.3597 35.3436 33.8218 35.2436 33.2233L32.919 19.32C32.819 18.7215 32.226 18.3655 31.6787 18.457L28.4798 18.9918Z"
+              fill="white"
+            />
+          </g>
+          <defs>
+            <clipPath id="clip0">
+              <rect
+                width="22"
+                height="20"
+                fill="white"
+                transform="translate(14 15)"
+              />
+            </clipPath>
+          </defs>
+        </svg>
+        <div class="app-details__right hidden sm-show">
+          <div class="app-details__name">BookStore</div>
+          <span class="app-details__type">Admin</span>
+        </div>
+      </div>
+      <!-- Search -->
+      <div class="search hidden sm-flex">
+        <div class="search__inner">
+          <input
+            type="search"
+            id="search-input"
+            class="search__input search-input"
+            placeholder="Search books, genres, authors, etc."
+          />
+          <button class="search__button" aria-label="search">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M7.28179 13.7779C8.8124 13.7779 10.2253 13.2598 11.3556 12.4121L14.1578 15.2143L15.5 13.8721L12.6978 11.0699C13.5455 9.93956 14.0636 8.52669 14.0636 6.99608C14.0636 3.25196 11.0259 0.214287 7.28179 0.214287C3.53768 0.214287 0.5 3.25196 0.5 6.99608C0.5 10.7402 3.53768 13.7779 7.28179 13.7779ZM7.28179 2.09812C9.9898 2.09812 12.1797 4.28807 12.1797 6.99608C12.1797 9.70408 9.9898 11.894 7.28179 11.894C4.57378 11.894 2.38383 9.70408 2.38383 6.99608C2.38383 4.28807 4.57378 2.09812 7.28179 2.09812Z"
+                fill="black"
+              />
+            </svg>
+          </button>
+          <div
+            id="YOUR_TARGETED_ELEMENT_ID"
+            class="search__dropdown-box fade-in search-dropdown-box"
+          ></div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="header__right">
+        <!-- close header overlay -->
+        <button class="item icon-button sm-hidden" data-toggle="header-overlay">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M7.28179 13.7779C8.8124 13.7779 10.2253 13.2598 11.3556 12.4121L14.1578 15.2143L15.5 13.8721L12.6978 11.0699C13.5455 9.93956 14.0636 8.52669 14.0636 6.99608C14.0636 3.25196 11.0259 0.214287 7.28179 0.214287C3.53768 0.214287 0.5 3.25196 0.5 6.99608C0.5 10.7402 3.53768 13.7779 7.28179 13.7779ZM7.28179 2.09812C9.9898 2.09812 12.1797 4.28807 12.1797 6.99608C12.1797 9.70408 9.9898 11.894 7.28179 11.894C4.57378 11.894 2.38383 9.70408 2.38383 6.99608C2.38383 4.28807 4.57378 2.09812 7.28179 2.09812Z"
+              fill="black"
+            />
+          </svg>
+        </button>
+        <!--  -->
+
+        <button class="item icon-button">
+          <svg
+            width="22"
+            height="20"
+            viewBox="0 0 22 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M8.5093 0C7.86438 0 7.42822 0.562054 7.42822 1.11486V18.8767C7.42822 19.4295 7.86438 20 8.5093 20H11.7525C12.3975 20 12.8336 19.4295 12.8336 18.8767V1.11486C12.8336 0.562054 12.3975 0 11.7525 0H8.5093ZM9.0498 1.62158H11.212V3.78374H9.0498V1.62158ZM1.45217 2.16211C0.867283 2.16211 0.371094 2.6583 0.371094 3.24319V18.9189C0.371094 19.5038 0.867283 19.9999 1.45217 19.9999H4.69542C5.28031 19.9999 5.7765 19.5038 5.7765 18.9189V3.24319C5.7765 2.6583 5.28031 2.16211 4.69542 2.16211H1.45217ZM1.99268 3.78381H4.15484V5.40544H1.99268V3.78381ZM9.0498 5.4054H11.212V14.5946H9.0498V5.4054ZM1.99268 7.02698H4.15484V15.1351H1.99268V7.02698ZM9.0498 16.2162H11.212V18.3783H9.0498V16.2162ZM1.99268 16.7567H4.15484V18.3783H1.99268V16.7567ZM17.5234 16.698L19.656 16.3414L19.9234 17.9409L17.7908 18.2974L17.5234 16.698ZM18.3188 8.34436L19.3885 14.742L17.2559 15.0986L16.1863 8.70091L18.3188 8.34436ZM15.6516 5.50206L17.7842 5.14551L18.0516 6.74493L15.919 7.10148L15.6516 5.50206ZM14.8509 3.99183C14.3036 4.08333 13.8587 4.6129 13.9587 5.21138L16.2833 19.1147C16.3833 19.7132 16.9777 20.0775 17.525 19.986L20.7239 19.4512C21.2712 19.3597 21.7147 18.8218 21.6147 18.2233L19.2901 4.32001C19.1901 3.72153 18.597 3.3655 18.0497 3.45701L14.8509 3.99183Z"
+              fill="black"
+            />
+          </svg>
+        </button>
+
+        <button class="item icon-button">
+          <span class="icon-button__badge">8</span>
+          <svg
+            width="18"
+            height="20"
+            viewBox="0 0 18 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M17.2502 14.5002L16.242 13.4232V9.80245C16.2459 6.9762 14.5581 4.42199 11.9567 3.31727V2.90478C12.0502 1.90038 11.5672 0.92956 10.7097 0.398383C9.85208 -0.132794 8.76774 -0.132794 7.91016 0.398383C7.05259 0.92956 6.56957 1.90038 6.66313 2.90478V3.31727C4.05275 4.41493 2.35493 6.97068 2.35495 9.80245V13.4002L1.34665 14.4773C0.856212 15.0134 0.72865 15.7885 1.02144 16.4535C1.31423 17.1185 1.97211 17.5478 2.69869 17.548H6.15898C6.51517 18.9817 7.79831 19.9912 9.27553 20H9.32137C10.7919 19.9939 12.0729 18.9955 12.4379 17.5709H15.9211C16.6477 17.5707 17.3056 17.1414 17.5984 16.4764C17.8912 15.8114 17.7636 15.0363 17.2732 14.5002H17.2502ZM8.01515 2.90483C7.94854 2.40969 8.17535 1.9209 8.59645 1.65206C9.01756 1.38323 9.55641 1.38323 9.97751 1.65206C10.3986 1.9209 10.6254 2.40969 10.5588 2.90483C9.71846 2.74498 8.85551 2.74498 8.01515 2.90483ZM9.32147 18.648H9.27564C8.5617 18.6476 7.91128 18.2377 7.60278 17.5939H10.9943C10.6793 18.2288 10.0302 18.6289 9.32147 18.6251V18.648ZM16.3336 15.921C16.2668 16.0896 16.1025 16.1992 15.9211 16.196H2.67575C2.48821 16.2028 2.31544 16.0946 2.23969 15.9229C2.16394 15.7512 2.20052 15.5507 2.33201 15.4168L3.52363 14.1335C3.63937 14.0087 3.7047 13.8454 3.70696 13.6752V9.80244C3.70696 7.81299 4.76832 5.97466 6.49123 4.97993C8.21415 3.98521 10.3369 3.98521 12.0598 4.97993C13.7827 5.97466 14.8441 7.81299 14.8441 9.80244V13.6752C14.8463 13.8454 14.9116 14.0087 15.0274 14.1335L16.219 15.4168C16.3636 15.5415 16.4101 15.746 16.3336 15.921Z"
+              fill="black"
+            />
+          </svg>
+        </button>
+
+        <img
+          class="item avatar"
+          alt="user-image"
+          src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&s=73a9df4b7bd1b330db1e903e08575ec1"
+        />
+      </div>
+    </header>
+    <div class="root-container">
+      <nav id="sidebar" class="navbar transition-50-all">
+        <!-- show this on mobile -->
+        <div class="sm-hidden mobile-top">
+          <!-- close sidebar -->
+          <button class="navbar__closer icon-button toggle-sidebar">
+            <svg
+              width="16"
+              height="15"
+              viewBox="0 0 16 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M16 8.28185V6.5338H3.37343L8.67118 1.23606L7.43512 0L0.901316 6.5338L0 7.40783L0.901316 8.28185L7.43512 14.8157L8.67118 13.5796L3.37343 8.28185H16Z"
+                fill="black"
+              />
+            </svg>
+          </button>
+          <div class="app-details">
+            <svg
+              width="50"
+              height="50"
+              viewBox="0 0 50 50"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M25 50C38.8071 50 50 38.8071 50 25C50 11.1929 38.8071 0 25 0C11.1929 0 0 11.1929 0 25C0 38.8071 11.1929 50 25 50Z"
+                fill="black"
+              />
+              <g clip-path="url(#clip0)">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M22.1382 15C21.4933 15 21.0571 15.5621 21.0571 16.1149V33.8767C21.0571 34.4295 21.4933 35 22.1382 35H25.3815C26.0264 35 26.4625 34.4295 26.4625 33.8767V16.1149C26.4625 15.5621 26.0264 15 25.3815 15H22.1382ZM22.6787 16.6216H24.8409V18.7837H22.6787V16.6216ZM15.0811 17.1621C14.4962 17.1621 14 17.6583 14 18.2432V33.9189C14 34.5038 14.4962 34.9999 15.0811 34.9999H18.3243C18.9092 34.9999 19.4054 34.5038 19.4054 33.9189V18.2432C19.4054 17.6583 18.9092 17.1621 18.3243 17.1621H15.0811ZM15.6216 18.7838H17.7837V20.4054H15.6216V18.7838ZM22.6787 20.4054H24.8409V29.5946H22.6787V20.4054ZM15.6216 22.027H17.7837V30.1351H15.6216V22.027ZM22.6787 31.2162H24.8409V33.3783H22.6787V31.2162ZM15.6216 31.7567H17.7837V33.3783H15.6216V31.7567ZM31.1523 31.698L33.2849 31.3414L33.5523 32.9409L31.4197 33.2974L31.1523 31.698ZM31.9478 23.3444L33.0174 29.742L30.8848 30.0986L29.8152 23.7009L31.9478 23.3444ZM29.2805 20.5021L31.4131 20.1455L31.6805 21.7449L29.5479 22.1015L29.2805 20.5021ZM28.4798 18.9918C27.9325 19.0833 27.4876 19.6129 27.5876 20.2114L29.9122 34.1147C30.0122 34.7132 30.6067 35.0775 31.1539 34.986L34.3528 34.4512C34.9001 34.3597 35.3436 33.8218 35.2436 33.2233L32.919 19.32C32.819 18.7215 32.226 18.3655 31.6787 18.457L28.4798 18.9918Z"
+                  fill="white"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0">
+                  <rect
+                    width="22"
+                    height="20"
+                    fill="white"
+                    transform="translate(14 15)"
+                  />
+                </clipPath>
+              </defs>
+            </svg>
+            <div class="app-details__right">
+              <div class="app-details__name">Korapay Book Club</div>
+              <span class="app-details__type">Admin</span>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+
+        <ul class="navbar__nav-section">
+          <li>
+            <a
+              class="navbar__nav-section__item navbar__nav-section__item--active"
+              href="#home"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a class="navbar__nav-section__item" href="#">Profile</a>
+          </li>
+          <li>
+            <a href="#notifications" class="navbar__nav-section__item">
+              Notifications
+              <div class="navbar__nav-section__item__badge">3</div>
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar__nav-section">
+          <li
+            class="navbar__nav-section__item navbar__nav-section__item--category-title"
+          >
+            Explore
+          </li>
+          <li>
+            <a href="#" class="navbar__nav-section__item">
+              Books
+              <div class="navbar__nav-section__item__count">273</div>
+            </a>
+          </li>
+          <li>
+            <a class="navbar__nav-section__item" href="#"
+              >Genres
+              <div class="navbar__nav-section__item__count">42</div></a
+            >
+          </li>
+          <li>
+            <a href="#" class="navbar__nav-section__item"
+              >Authors
+              <div class="navbar__nav-section__item__count">106</div></a
+            >
+          </li>
+        </ul>
+        <ul class="navbar__nav-section">
+          <li
+            class="navbar__nav-section__item navbar__nav-section__item--category-title"
+          >
+            My Books
+          </li>
+          <li>
+            <a class="navbar__nav-section__item" href="#"
+              >Queued
+              <div class="navbar__nav-section__item__count">3</div></a
+            >
+          </li>
+          <li>
+            <a href="#" class="navbar__nav-section__item">
+              Currently Borrowed
+              <div class="navbar__nav-section__item__count">0</div></a
+            >
+          </li>
+          <li>
+            <a class="navbar__nav-section__item" href="#">
+              Favourites
+              <div class="navbar__nav-section__item__count">19</div></a
+            >
+          </li>
+          <li><a href="#" class="navbar__nav-section__item">History</a></li>
+        </ul>
+        <ul class="navbar__nav-section">
+          <li
+            class="navbar__nav-section__item navbar__nav-section__item--category-title"
+          >
+            Admin
+          </li>
+          <li>
+            <a href="#" class="navbar__nav-section__item">
+              Book Request
+              <div class="navbar__nav-section__item__badge">2</div></a
+            >
+          </li>
+          <li>
+            <a href="#" class="navbar__nav-section__item">
+              Members
+              <div class="navbar__nav-section__item__count">34</div>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="navbar__nav-section__item"> Library Settings </a>
+          </li>
+        </ul>
+      </nav>
+      <main class="main-area fade-in">
+        <!-- case 1: normal page flow -->
+        <div id="normal-page-view-container">
+          <!-- Faetured Books -->
+          <div class="list-label">FEATURED BOOKS</div>
+          <div id="main-carousel" class="main-carousel">
+            <!-- Redender Featured here -->
+          </div>
+
+          <!-- Recently Added Books -->
+          <div class="grid-lists-container">
+            <div class="list-label">RECENTLY ADDED</div>
+            <!-- Grid -->
+            <div id="recently-add-books" class="book-list">
+              <!-- Render Recently Added Books -->
+            </div>
+
+            <!-- All Books -->
+
+            <div class="list-label">ALL BOOKS</div>
+            <!-- Grid -->
+            <div id="all-books" class="book-list">
+              <!-- Redender all books here -->
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <!-- case 2: searcg result view -->
+        <div id="search-result-view-cntainer" class="container">
+          <!-- Show search result here -->
+        </div>
+      </main>
+    </div>
+    <script src="./src/app.js"></script>
+  </body>
+</html>
