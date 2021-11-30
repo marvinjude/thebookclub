@@ -38,14 +38,6 @@ The app should be live on [http://localhost:1234](http://localhost:1234) 🎉
 
 **Note**: Make sure you have gone through the installation process explained above 👆
 
-## Assumtions
-
-This is a book club app where users can search for books, see details about different book, see if a book is available for borrwowing or if it's borrowed out.
-
-## Uncovered Requirments
-
-NIL
-
 ## Build for Producion
 
 You can build this app for production by running
@@ -54,21 +46,7 @@ You can build this app for production by running
 yarn build
 ```
 
-## Challenges Faced
-
-NIL
-
-## Ways to Improve this assesment
-
-- The assesment looks pretty neat, however we can go a step further by asking candidates to implement some sort of micro intraction on the page, this may help test how creative they are when it comes to crafting solid user expereinces.
-
-# Others Details
-
-## Data separation over hardcoding
-
-Ideally, applications usually have data layers - APIs, this application is modeled close to that. Only that the data in sitted in the application itself.
-
-## Componentization
+## Notes
 
 I'm a huge fan of components especially because they are easy to reason about when building apps. This application does some form of componentization.. Somtething like a React component. I wrote components like `Book`, `FeaturedBook` ...
 
